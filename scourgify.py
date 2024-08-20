@@ -14,7 +14,14 @@ def main():
         with open(f"{sys.argv[1]}") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                print(row)
+                last, first= row['name'].split(",")
+        with open('after.csv', mode='w', newline='') as file:
+            fieldname=['first', 'last', 'house']
+            writer= csv.Dictwriter(file, fieldnames= fieldname )
+            write.writeheader()
+            for row in writer:
+                writer.writerow
+
 
 
 main()
