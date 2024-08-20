@@ -15,12 +15,13 @@ def main():
             reader = csv.DictReader(csvfile)
             for row in reader:
                 last, first= row['name'].split(",")
-        with open('after.csv', mode='w', newline='') as file:
-            fieldname=['first', 'last', 'house']
-            writer= csv.Dictwriter(file, fieldnames= fieldname )
-            write.writeheader()
-            for row in writer:
-                writer.writerow
+            with open('after.csv', mode='w', newline='') as file:
+                fieldname=['first', 'last', 'house']
+                writer= csv.DictWriter(file, fieldnames= fieldname )
+                writer.writeheader()
+                for row in reader:
+                    writer.writerow({'first': first, 'last': last, 'house': row['house']})
+
 
 
 
